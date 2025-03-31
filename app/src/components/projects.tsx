@@ -12,16 +12,16 @@ export default function Projects() {
       title: "WheatChain",
       description:
         "A revolutionary blockchain platform on Sui, combining social engagement with advanced DeFi features.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/images/project1.jpg",
       tags: ["Sui Blockchain", "DeFi", "Web3", "Move"],
-      link: "#",
-      github: "#",
+      link: "https://yourprojecturl.com",
+      github: "https://github.com/yourusername/project-repo",
     },
     {
       title: "Sui DeFi Protocol",
       description:
         "Custom DeFi protocol leveraging Sui's unique features for scalable and efficient financial solutions.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/images/project2.jpg",
       tags: ["DeFi", "Sui", "Smart Contracts", "Finance"],
       link: "#",
       github: "#",
@@ -29,7 +29,7 @@ export default function Projects() {
     {
       title: "Decentralized Governance",
       description: "Community-driven governance system for decentralized applications built on the Sui blockchain.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/images/project3.jpg",
       tags: ["Governance", "DAO", "Blockchain", "Voting"],
       link: "#",
       github: "#",
@@ -37,7 +37,7 @@ export default function Projects() {
     {
       title: "Yield Farming Platform",
       description: "Innovative yield farming and liquidity provision mechanisms for the DeFi ecosystem.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/images/project4.jpg",
       tags: ["Yield Farming", "DeFi", "Liquidity", "Staking"],
       link: "#",
       github: "#",
@@ -114,17 +114,23 @@ export default function Projects() {
                     variant="outline"
                     size="sm"
                     className="flex items-center gap-1 border-blue-500 text-blue-500 hover:bg-blue-50"
+                    asChild
                   >
-                    <Globe className="h-4 w-4" />
-                    <span>Live Demo</span>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <Globe className="h-4 w-4" />
+                      <span>Live Demo</span>
+                    </a>
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
                     className="flex items-center gap-1 border-gray-300 text-gray-700 hover:bg-gray-50"
+                    asChild
                   >
-                    <Github className="h-4 w-4" />
-                    <span>Source Code</span>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="h-4 w-4" />
+                      <span>Source Code</span>
+                    </a>
                   </Button>
                 </div>
               </CardContent>

@@ -39,17 +39,25 @@ export default function Hero() {
           <div className="mt-8 flex items-center gap-4">
             <span className="text-sm text-gray-500">Connect with me:</span>
             <div className="flex gap-3">
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700">
-                <Github className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700" asChild>
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700">
-                <Linkedin className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700" asChild>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700">
-                <Twitter className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700" asChild>
+                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+                  <Twitter className="h-5 w-5" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700">
-                <Mail className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700" asChild>
+                <a href="mailto:your.email@example.com">
+                  <Mail className="h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>
@@ -63,7 +71,7 @@ export default function Hero() {
           <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full bg-blue-500/10 p-2">
             <div className="w-full h-full rounded-full overflow-hidden border-4 border-blue-500/30">
               <Image
-                src="/placeholder.svg?height=400&width=400"
+                src="/images/profile.jpg"
                 alt="Muiz Adesope"
                 width={400}
                 height={400}

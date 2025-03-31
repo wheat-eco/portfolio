@@ -151,17 +151,45 @@ export default function Home() {
                 <p className="mt-2 text-blue-100">Full-Stack Developer | Blockchain Innovator</p>
               </div>
               <div className="flex space-x-4">
-                <Button variant="ghost" size="icon" className="rounded-full bg-white/10 hover:bg-white/20 text-white">
-                  <GitHub className="h-5 w-5" />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full bg-white/10 hover:bg-white/20 text-white"
+                  asChild
+                >
+                  <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                    <GitHub className="h-5 w-5" />
+                  </a>
                 </Button>
-                <Button variant="ghost" size="icon" className="rounded-full bg-white/10 hover:bg-white/20 text-white">
-                  <Linkedin className="h-5 w-5" />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full bg-white/10 hover:bg-white/20 text-white"
+                  asChild
+                >
+                  <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="h-5 w-5" />
+                  </a>
                 </Button>
-                <Button variant="ghost" size="icon" className="rounded-full bg-white/10 hover:bg-white/20 text-white">
-                  <Twitter className="h-5 w-5" />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full bg-white/10 hover:bg-white/20 text-white"
+                  asChild
+                >
+                  <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+                    <Twitter className="h-5 w-5" />
+                  </a>
                 </Button>
-                <Button variant="ghost" size="icon" className="rounded-full bg-white/10 hover:bg-white/20 text-white">
-                  <Mail className="h-5 w-5" />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full bg-white/10 hover:bg-white/20 text-white"
+                  asChild
+                >
+                  <a href="mailto:your.email@example.com">
+                    <Mail className="h-5 w-5" />
+                  </a>
                 </Button>
               </div>
             </div>

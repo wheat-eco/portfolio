@@ -190,8 +190,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Email</h4>
-                    <a href="mailto:contact@example.com" className="text-blue-600 hover:underline">
-                      contact@example.com
+                    <a href="mailto:your.actual.email@example.com" className="text-blue-600 hover:underline">
+                      your.actual.email@example.com
                     </a>
                   </div>
                 </div>
