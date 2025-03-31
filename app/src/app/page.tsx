@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { ArrowDown, GitlabIcon as GitHub, Linkedin, Mail, Twitter } from "lucide-react"
+import { ArrowDown, GitlabIcon as GitHub, Linkedin, Mail } from "lucide-react"
 import Hero from "@/components/hero"
 import About from "@/components/about"
 import Skills from "@/components/skills"
@@ -157,7 +157,7 @@ export default function Home() {
                   className="rounded-full bg-white/10 hover:bg-white/20 text-white"
                   asChild
                 >
-                  <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/Muiz-Dev" target="_blank" rel="noopener noreferrer">
                     <GitHub className="h-5 w-5" />
                   </a>
                 </Button>
@@ -167,7 +167,7 @@ export default function Home() {
                   className="rounded-full bg-white/10 hover:bg-white/20 text-white"
                   asChild
                 >
-                  <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                  <a href="https://linkedin.com/in/adesopemuiz" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-5 w-5" />
                   </a>
                 </Button>
@@ -177,17 +177,7 @@ export default function Home() {
                   className="rounded-full bg-white/10 hover:bg-white/20 text-white"
                   asChild
                 >
-                  <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
-                    <Twitter className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full bg-white/10 hover:bg-white/20 text-white"
-                  asChild
-                >
-                  <a href="mailto:your.email@example.com">
+                  <a href="mailto:muiz@wheatchain.xyz">
                     <Mail className="h-5 w-5" />
                   </a>
                 </Button>

@@ -12,19 +12,19 @@ export default function Projects() {
       title: "WheatChain",
       description:
         "A revolutionary blockchain platform on Sui, combining social engagement with advanced DeFi features.",
-      image: "/images/project1.jpg",
+      image: "/images/project1.png",
       tags: ["Sui Blockchain", "DeFi", "Web3", "Move"],
-      link: "https://yourprojecturl.com",
-      github: "https://github.com/yourusername/project-repo",
+      link: "https://presale.wheatchain.xyz/",
+      github: "https://github.com/wheat-eco",
     },
     {
-      title: "Sui DeFi Protocol",
+      title: "DeFi Protocol",
       description:
         "Custom DeFi protocol leveraging Sui's unique features for scalable and efficient financial solutions.",
       image: "/images/project2.jpg",
       tags: ["DeFi", "Sui", "Smart Contracts", "Finance"],
       link: "#",
-      github: "#",
+      github: "https://github.com/wheat-eco/DeFI-2.0",
     },
     {
       title: "Decentralized Governance",
@@ -32,7 +32,7 @@ export default function Projects() {
       image: "/images/project3.jpg",
       tags: ["Governance", "DAO", "Blockchain", "Voting"],
       link: "#",
-      github: "#",
+      github: "https://github.com/wheat-eco",
     },
     {
       title: "Yield Farming Platform",
@@ -40,7 +40,7 @@ export default function Projects() {
       image: "/images/project4.jpg",
       tags: ["Yield Farming", "DeFi", "Liquidity", "Staking"],
       link: "#",
-      github: "#",
+      github: "https://github.com/wheat-eco/DeFI-2.0",
     },
   ]
 
@@ -110,17 +110,19 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex items-center gap-1 border-blue-500 text-blue-500 hover:bg-blue-50"
-                    asChild
-                  >
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      <Globe className="h-4 w-4" />
-                      <span>Live Demo</span>
-                    </a>
-                  </Button>
+                  {project.link !== "#" && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex items-center gap-1 border-blue-500 text-blue-500 hover:bg-blue-50"
+                      asChild
+                    >
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <Globe className="h-4 w-4" />
+                        <span>Live Demo</span>
+                      </a>
+                    </Button>
+                  )}
                   <Button
                     variant="outline"
                     size="sm"
@@ -146,9 +148,14 @@ export default function Projects() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="mt-12 text-center"
       >
-        <Button className="group flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md">
-          View All Projects
-          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        <Button
+          className="group flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md"
+          asChild
+        >
+          <a href="https://github.com/Muiz-Dev" target="_blank" rel="noopener noreferrer">
+            View All Projects
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </a>
         </Button>
       </motion.div>
     </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -29,10 +29,27 @@ export default function Hero() {
             Founder & Lead Developer at WheatChain, specializing in Sui Blockchain development.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md flex items-center gap-2">
+            <Button
+              className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md flex items-center gap-2"
+              onClick={() => {
+                const projectsSection = document.getElementById("projects")
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: "smooth" })
+                }
+              }}
+            >
               View Projects <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button variant="outline" className="border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-2 rounded-md">
+            <Button
+              variant="outline"
+              className="border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-2 rounded-md"
+              onClick={() => {
+                const contactSection = document.getElementById("contact")
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: "smooth" })
+                }
+              }}
+            >
               Contact Me
             </Button>
           </div>
@@ -40,22 +57,17 @@ export default function Hero() {
             <span className="text-sm text-gray-500">Connect with me:</span>
             <div className="flex gap-3">
               <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700" asChild>
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Muiz-Dev" target="_blank" rel="noopener noreferrer">
                   <Github className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700" asChild>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                <a href="https://linkedin.com/in/adesopemuiz" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700" asChild>
-                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
-                  <Twitter className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700" asChild>
-                <a href="mailto:your.email@example.com">
+                <a href="mailto:muiz@wheatchain.xyz">
                   <Mail className="h-5 w-5" />
                 </a>
               </Button>
@@ -71,7 +83,7 @@ export default function Hero() {
           <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full bg-blue-500/10 p-2">
             <div className="w-full h-full rounded-full overflow-hidden border-4 border-blue-500/30">
               <Image
-                src="/images/profile.jpg"
+                src="/images/profile.jpeg"
                 alt="Muiz Adesope"
                 width={400}
                 height={400}
