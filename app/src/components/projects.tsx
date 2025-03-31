@@ -37,7 +37,7 @@ export default function Projects() {
     {
       title: "Yield Farming Platform",
       description: "Innovative yield farming and liquidity provision mechanisms for the DeFi ecosystem.",
-      image: "/project4.jpg",
+      image: "/project4.png",
       tags: ["Yield Farming", "DeFi", "Liquidity", "Staking"],
       link: "#",
       github: "https://github.com/wheat-eco/DeFI-2.0",
