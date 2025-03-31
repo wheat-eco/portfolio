@@ -12,7 +12,7 @@ export default function Projects() {
       title: "WheatChain",
       description:
         "A revolutionary blockchain platform on Sui, combining social engagement with advanced DeFi features.",
-      image: "/images/project1.png",
+      image: "/project1.png",
       tags: ["Sui Blockchain", "DeFi", "Web3", "Move"],
       link: "https://presale.wheatchain.xyz/",
       github: "https://github.com/wheat-eco",
@@ -21,7 +21,7 @@ export default function Projects() {
       title: "DeFi Protocol",
       description:
         "Custom DeFi protocol leveraging Sui's unique features for scalable and efficient financial solutions.",
-      image: "/images/project2.jpg",
+      image: "/project2.png",
       tags: ["DeFi", "Sui", "Smart Contracts", "Finance"],
       link: "#",
       github: "https://github.com/wheat-eco/DeFI-2.0",
@@ -29,7 +29,7 @@ export default function Projects() {
     {
       title: "Decentralized Governance",
       description: "Community-driven governance system for decentralized applications built on the Sui blockchain.",
-      image: "/images/project3.jpg",
+      image: "/project3.png",
       tags: ["Governance", "DAO", "Blockchain", "Voting"],
       link: "#",
       github: "https://github.com/wheat-eco",
@@ -37,7 +37,7 @@ export default function Projects() {
     {
       title: "Yield Farming Platform",
       description: "Innovative yield farming and liquidity provision mechanisms for the DeFi ecosystem.",
-      image: "/images/project4.jpg",
+      image: "/project4.jpg",
       tags: ["Yield Farming", "DeFi", "Liquidity", "Staking"],
       link: "#",
       github: "https://github.com/wheat-eco/DeFI-2.0",

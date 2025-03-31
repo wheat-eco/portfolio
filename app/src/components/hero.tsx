@@ -83,7 +83,7 @@ export default function Hero() {
           <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full bg-blue-500/10 p-2">
             <div className="w-full h-full rounded-full overflow-hidden border-4 border-blue-500/30">
               <Image
-                src="/images/profile.jpeg"
+                src="/profile.jpeg"
                 alt="Muiz Adesope"
                 width={400}
                 height={400}
