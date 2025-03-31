@@ -1,103 +1,190 @@
-import Image from "next/image";
+"use client"
+
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import { ArrowDown, GitlabIcon as GitHub, Linkedin, Mail, Twitter } from "lucide-react"
+import Hero from "@/components/hero"
+import About from "@/components/about"
+import Skills from "@/components/skills"
+import Projects from "@/components/projects"
+import Experience from "@/components/experience"
+import Contact from "@/components/contact"
+import MobileNav from "@/components/mobile-nav"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState("home")
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "about", "skills", "projects", "experience", "contact"]
+      const scrollPosition = window.scrollY + 100
+
+      sections.forEach((section) => {
+        const element = document.getElementById(section)
+        if (element) {
+          const offsetTop = element.offsetTop
+          const height = element.offsetHeight
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
+            setActiveSection(section)
+          }
+        }
+      })
+
+      setScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 80,
+        behavior: "smooth",
+      })
+      setMobileMenuOpen(false)
+    }
+  }
+
+  return (
+    <main className="min-h-screen bg-white">
+      {/* Header/Navigation */}
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
+        }`}
+      >
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl font-bold text-blue-500"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Muiz<span className="text-black">.dev</span>
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            {["home", "about", "skills", "projects", "experience", "contact"].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item)}
+                className={`capitalize text-sm font-medium transition-colors hover:text-blue-500 ${
+                  activeSection === item ? "text-blue-500" : "text-gray-700"
+                }`}
+              >
+                {item}
+              </button>
+            ))}
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-gray-700 hover:text-blue-500"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            Read our docs
-          </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+              />
+            </svg>
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </header>
+
+      {/* Mobile Navigation */}
+      <MobileNav
+        isOpen={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+        onNavClick={scrollToSection}
+        activeSection={activeSection}
+      />
+
+      {/* Main Content */}
+      <div className="pt-20">
+        <section id="home" className="min-h-screen flex items-center">
+          <Hero />
+        </section>
+
+        <section id="about" className="py-20 bg-gray-50">
+          <About />
+        </section>
+
+        <section id="skills" className="py-20">
+          <Skills />
+        </section>
+
+        <section id="projects" className="py-20 bg-gray-50">
+          <Projects />
+        </section>
+
+        <section id="experience" className="py-20">
+          <Experience />
+        </section>
+
+        <section id="contact" className="py-20 bg-gray-50">
+          <Contact />
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-blue-600 text-white py-12">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <div className="mb-6 md:mb-0">
+                <h2 className="text-2xl font-bold">Muiz Adesope Ayomide</h2>
+                <p className="mt-2 text-blue-100">Full-Stack Developer | Blockchain Innovator</p>
+              </div>
+              <div className="flex space-x-4">
+                <Button variant="ghost" size="icon" className="rounded-full bg-white/10 hover:bg-white/20 text-white">
+                  <GitHub className="h-5 w-5" />
+                </Button>
+                <Button variant="ghost" size="icon" className="rounded-full bg-white/10 hover:bg-white/20 text-white">
+                  <Linkedin className="h-5 w-5" />
+                </Button>
+                <Button variant="ghost" size="icon" className="rounded-full bg-white/10 hover:bg-white/20 text-white">
+                  <Twitter className="h-5 w-5" />
+                </Button>
+                <Button variant="ghost" size="icon" className="rounded-full bg-white/10 hover:bg-white/20 text-white">
+                  <Mail className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+            <div className="mt-8 pt-8 border-t border-blue-500 text-center text-blue-100">
+              <p>&copy; {new Date().getFullYear()} Muiz Adesope. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+
+        {/* Scroll to top button */}
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: scrolled ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className={`fixed bottom-8 right-8 p-3 rounded-full bg-blue-500 text-white shadow-lg hover:bg-blue-600 transition-all ${
+            scrolled ? "visible" : "invisible"
+          }`}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+          <ArrowDown className="h-5 w-5 transform rotate-180" />
+        </motion.button>
+      </div>
+    </main>
+  )
 }
+
