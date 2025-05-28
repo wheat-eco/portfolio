@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Muiz Adesope | Full-Stack Developer & Blockchain Innovator",
     description: "Portfolio of Muiz Adesope Ayomide, a Full-Stack Developer, Blockchain Innovator, and DeFi Architect specializing in Sui Blockchain development.",
-    creator: "@Techque_tg",
+    creator: "@_kdev_io",
     images: [`${baseUrl}/profile.jpeg`],
   },
   
@@ -107,8 +107,8 @@ export const metadata: Metadata = {
   
   // Social media profiles
   other: {
-    "twitter:site": "@Techque_tg",
-    "twitter:creator": "@Techque_tg",
+    "twitter:site": "@_kdev_io",
+    "twitter:creator": "@_kdev_io",
     "linkedin:profile": "https://www.linkedin.com/in/adesopemuiz/",
     "github:profile": "https://github.com/Muiz-Dev",
   },
@@ -165,7 +165,7 @@ export default function RootLayout({
             {children}
             <footer className="mt-auto py-4 text-center text-sm text-muted-foreground">
               <div className="flex justify-center space-x-4 mb-2">
-                <a href="https://x.com/Techque_tg" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile" className="hover:text-primary transition-colors">
+                <a href="https://x.com/_kdev_io" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile" className="hover:text-primary transition-colors">
                   Twitter
                 </a>
                 <a href="https://www.linkedin.com/in/adesopemuiz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="hover:text-primary transition-colors">
