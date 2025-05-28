@@ -6,24 +6,24 @@ import { Card, CardContent } from "@/components/ui/card"
 export default function Skills() {
   const categories = [
     {
-      name: "Blockchain",
-      skills: ["Sui", "Smart Contracts", "DeFi", "Web3.js", "Ethereum"],
-    },
-    {
-      name: "Languages",
-      skills: ["Move", "JavaScript", "Solidity", "Python", "PHP"],
-    },
-    {
       name: "Frontend",
       skills: ["React", "Next.js", "Tailwind CSS", "HTML/CSS", "TypeScript"],
     },
     {
       name: "Backend",
-      skills: ["Node.js", "Express", "GraphQL", "MongoDB", "MySQL"],
+      skills: ["Node.js", "Express", "Django", "Flask", "PHP"],
     },
     {
-      name: "Tools & Frameworks",
-      skills: ["Git", "Docker", "Sui SDK", "Move Prover", "Sui CLI"],
+      name: "Languages",
+      skills: ["JavaScript", "Python", "TypeScript", "C", "PHP"],
+    },
+    {
+      name: "Databases",
+      skills: ["MongoDB", "MySQL", "PostgreSQL", "Redis", "Firebase"],
+    },
+    {
+      name: "Tools & DevOps",
+      skills: ["Git", "Docker", "CI/CD", "AWS", "Linux"],
     },
   ]
 
@@ -58,8 +58,8 @@ export default function Skills() {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
         <div className="w-20 h-1 bg-blue-500 mx-auto mb-8"></div>
         <p className="max-w-3xl mx-auto text-lg text-gray-600">
-          With a diverse skill set spanning blockchain development, web technologies, and software engineering, I bring
-          a comprehensive approach to building innovative digital solutions.
+          With a diverse skill set spanning web development, software engineering, and system design, I bring a
+          comprehensive approach to building innovative digital solutions.
         </p>
       </motion.div>
 
@@ -101,15 +101,15 @@ export default function Skills() {
         <h3 className="text-2xl font-bold text-gray-900 mb-4">Key Strengths</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
           {[
-            "Sui Blockchain Development",
-            "Smart Contracts",
-            "DeFi Protocol Design",
-            "Full-Stack Web Development",
+            "Responsive Web Design",
+            "API Development",
+            "Database Optimization",
+            "Full-Stack Development",
             "Project Management",
-            "Team Leadership",
-            "Blockchain Interoperability",
-            "Move Language Proficiency",
+            "Team Collaboration",
+            "Problem Solving",
             "UI/UX Design",
+            "System Architecture",
           ].map((strength, index) => (
             <div key={index} className="bg-white p-3 rounded-md shadow-sm">
               <p className="font-medium text-gray-800">{strength}</p>
@@ -120,4 +120,3 @@ export default function Skills() {
     </div>
   )
 }
-

@@ -29,9 +29,9 @@ export default function About() {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
         <div className="w-20 h-1 bg-blue-500 mx-auto mb-8"></div>
         <p className="max-w-3xl mx-auto text-lg text-gray-600">
-          Passionate about revolutionizing the web through blockchain technology and decentralized solutions. With a
-          strong foundation in full-stack development since 2019, I've expanded my expertise to include Web3, smart
-          contracts, and blockchain technologies with a focus on the Sui blockchain.
+          Passionate software engineer with a strong foundation in full-stack development since 2019. I'm dedicated to
+          creating efficient, scalable, and user-friendly applications that solve real-world problems through innovative
+          technology solutions.
         </p>
       </motion.div>
 
@@ -45,14 +45,15 @@ export default function About() {
         >
           <h3 className="text-2xl font-bold text-gray-900 mb-4">My Journey</h3>
           <p className="text-gray-600 mb-6">
-            I'm the founder and lead developer of WheatChain, where we're building an innovative blockchain-based
-            platform that combines social engagement with decentralized finance (DeFi) on the Sui blockchain. Our
-            mission is to empower users through cutting-edge Web3 technologies, creating a more equitable and rewarding
-            digital ecosystem.
+            My journey in software development began with a curiosity about how digital solutions can transform
+            businesses and improve lives. Over the years, I've honed my skills through hands-on experience, formal
+            education, and continuous learning in the rapidly evolving tech landscape.
           </p>
           <p className="text-gray-600">
             Currently, I'm pursuing a degree in Mechatronics, Robotics, and Automation Engineering at Yaba College of
-            Technology, while also enhancing my software engineering skills through the ALX Africa program.
+            Technology, while also enhancing my software engineering skills through the ALX Africa program. I'm also
+            gaining valuable industry experience as an intern at the Digital Technology Academy at Yaba College of
+            Technology.
           </p>
         </motion.div>
 
@@ -81,9 +82,9 @@ export default function About() {
                 <Database className="h-5 w-5 text-blue-600" />
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900">Blockchain Development</h4>
+                <h4 className="font-semibold text-gray-900">Database Design</h4>
                 <p className="text-gray-600">
-                  Creating decentralized applications and smart contracts on Sui and Ethereum.
+                  Creating efficient database structures and optimizing queries for performance.
                 </p>
               </div>
             </li>
@@ -92,9 +93,9 @@ export default function About() {
                 <Lightbulb className="h-5 w-5 text-blue-600" />
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900">DeFi Innovation</h4>
+                <h4 className="font-semibold text-gray-900">Problem Solving</h4>
                 <p className="text-gray-600">
-                  Designing and implementing decentralized finance protocols and solutions.
+                  Analyzing complex challenges and developing elegant technical solutions.
                 </p>
               </div>
             </li>
@@ -106,18 +107,18 @@ export default function About() {
         {[
           {
             icon: <Globe className="h-10 w-10 text-blue-500" />,
-            title: "Web3 Pioneer",
-            description: "Pushing the boundaries of what's possible in the decentralized web space.",
+            title: "Web Development",
+            description: "Creating responsive, accessible, and performant web applications.",
           },
           {
             icon: <Server className="h-10 w-10 text-blue-500" />,
-            title: "DeFi Architect",
-            description: "Building the financial infrastructure of tomorrow with innovative DeFi solutions.",
+            title: "Backend Architecture",
+            description: "Designing robust server-side systems with scalability in mind.",
           },
           {
             icon: <Zap className="h-10 w-10 text-blue-500" />,
-            title: "Blockchain Innovator",
-            description: "Leveraging blockchain technology to create transparent and efficient systems.",
+            title: "Technical Innovation",
+            description: "Implementing cutting-edge technologies to solve complex problems.",
           },
         ].map((item, i) => (
           <motion.div
@@ -141,4 +142,3 @@ export default function About() {
     </div>
   )
 }
-

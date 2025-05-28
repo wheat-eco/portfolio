@@ -6,23 +6,23 @@ import { Calendar, GraduationCap, Briefcase } from "lucide-react"
 export default function Experience() {
   const experiences = [
     {
-      title: "Founder & Lead Developer",
-      company: "WheatChain",
-      period: "2022 - Present",
+      title: "Software Engineering Intern",
+      company: "Digital Technology Academy, Yaba College of Technology",
+      period: "2023 - Present",
       description:
-        "Leading the development of a revolutionary blockchain platform on Sui, combining social engagement with advanced DeFi features. Implementing cutting-edge DeFi features and creating innovative yield farming mechanisms.",
+        "Working on real-world software development projects, collaborating with senior developers to build and maintain web applications. Implementing best practices in software development and gaining hands-on experience with industry-standard tools and methodologies.",
       type: "work",
     },
     {
-      title: "Sui Blockchain Developer",
-      company: "Freelance",
+      title: "Freelance Full-Stack Developer",
+      company: "Various Clients",
       period: "2021 - Present",
       description:
-        "Developing custom DeFi protocols leveraging Sui's unique features. Creating decentralized governance systems and implementing advanced security measures using Move's safety features.",
+        "Developing custom web applications for clients across different industries. Creating responsive user interfaces, implementing backend functionality, and ensuring optimal performance and security.",
       type: "work",
     },
     {
-      title: "Full-Stack Developer",
+      title: "Junior Web Developer",
       company: "Various Projects",
       period: "2019 - 2021",
       description:
@@ -40,9 +40,9 @@ export default function Experience() {
     {
       title: "Software Engineering Program",
       company: "ALX Africa",
-      period: "2022 - Present",
+      period: "2022 - 2023",
       description:
-        "Comprehensive software engineering program covering programming fundamentals, data structures, algorithms, and modern development practices.",
+        "Completed a comprehensive software engineering program covering programming fundamentals, data structures, algorithms, system engineering, DevOps, and modern development practices. Gained hands-on experience through numerous projects and collaborative assignments.",
       type: "education",
     },
   ]
@@ -78,8 +78,8 @@ export default function Experience() {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Experience & Education</h2>
         <div className="w-20 h-1 bg-blue-500 mx-auto mb-8"></div>
         <p className="max-w-3xl mx-auto text-lg text-gray-600">
-          My professional journey and educational background that have shaped my expertise in blockchain development and
-          software engineering.
+          My professional journey and educational background that have shaped my expertise in software engineering and
+          development.
         </p>
       </motion.div>
 
@@ -174,19 +174,18 @@ export default function Experience() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
           <div className="bg-white p-4 rounded-md shadow-sm">
             <p className="font-medium text-gray-800">ALX Software Engineering Program</p>
-            <p className="text-sm text-gray-600">Current</p>
+            <p className="text-sm text-gray-600">Completed</p>
           </div>
           <div className="bg-white p-4 rounded-md shadow-sm">
-            <p className="font-medium text-gray-800">Sui Ecosystem Hackathons</p>
-            <p className="text-sm text-gray-600">Active Participant</p>
+            <p className="font-medium text-gray-800">Web Development Bootcamp</p>
+            <p className="text-sm text-gray-600">Udemy</p>
           </div>
           <div className="bg-white p-4 rounded-md shadow-sm">
-            <p className="font-medium text-gray-800">Sui Developer Community</p>
-            <p className="text-sm text-gray-600">Contributor</p>
+            <p className="font-medium text-gray-800">Advanced JavaScript</p>
+            <p className="text-sm text-gray-600">Frontend Masters</p>
           </div>
         </div>
       </motion.div>
     </div>
   )
 }
-

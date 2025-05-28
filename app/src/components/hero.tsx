@@ -22,23 +22,23 @@ export default function Hero() {
             Hi, I'm <span className="text-blue-500">Muiz Adesope</span>
           </h1>
           <h2 className="text-xl md:text-2xl font-medium text-gray-700 mb-6">
-            Full-Stack Developer | Blockchain Innovator | DeFi Architect
+            Full-Stack Developer | Software Engineer | Problem Solver
           </h2>
           <p className="text-gray-600 mb-8 text-lg">
-            I'm passionate about revolutionizing the web through blockchain technology and decentralized solutions.
-            Founder & Lead Developer at WheatChain, specializing in Sui Blockchain development.
+            I'm passionate about creating efficient, scalable, and user-friendly applications. Currently an intern at
+            Digital Technology Academy and an ALX Software Engineering program graduate.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button
               className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md flex items-center gap-2"
               onClick={() => {
-                const projectsSection = document.getElementById("projects")
-                if (projectsSection) {
-                  projectsSection.scrollIntoView({ behavior: "smooth" })
+                const experienceSection = document.getElementById("experience")
+                if (experienceSection) {
+                  experienceSection.scrollIntoView({ behavior: "smooth" })
                 }
               }}
             >
-              View Projects <ArrowRight className="h-4 w-4" />
+              My Experience <ArrowRight className="h-4 w-4" />
             </Button>
             <Button
               variant="outline"
@@ -67,7 +67,7 @@ export default function Hero() {
                 </a>
               </Button>
               <Button variant="ghost" size="icon" className="rounded-full hover:bg-blue-50 text-gray-700" asChild>
-                <a href="mailto:muiz@wheatchain.xyz">
+                <a href="mailto:muiz.dev.io@gmail.com">
                   <Mail className="h-5 w-5" />
                 </a>
               </Button>
@@ -116,4 +116,3 @@ export default function Hero() {
     </div>
   )
 }
-

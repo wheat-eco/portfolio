@@ -9,38 +9,39 @@ import Image from "next/image"
 export default function Projects() {
   const projects = [
     {
-      title: "WheatChain",
+      title: "E-Learning Platform",
       description:
-        "A revolutionary blockchain platform on Sui, combining social engagement with advanced DeFi features.",
+        "A comprehensive online learning platform with course management, student progress tracking, and interactive content delivery.",
       image: "/project1.png",
-      tags: ["Sui Blockchain", "DeFi", "Web3", "Move"],
-      link: "https://presale.wheatchain.xyz/",
-      github: "https://github.com/wheat-eco",
+      tags: ["React", "Node.js", "MongoDB", "Express", "Redux"],
+      link: "#",
+      github: "https://github.com/Muiz-Dev/e-learning-platform",
     },
     {
-      title: "DeFi Protocol",
+      title: "Inventory Management System",
       description:
-        "Custom DeFi protocol leveraging Sui's unique features for scalable and efficient financial solutions.",
+        "A robust inventory tracking solution for small businesses with real-time updates, reporting, and user management.",
       image: "/project2.png",
-      tags: ["DeFi", "Sui", "Smart Contracts", "Finance"],
+      tags: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
       link: "#",
-      github: "https://github.com/wheat-eco/DeFI-2.0",
+      github: "https://github.com/Muiz-Dev/inventory-system",
     },
     {
-      title: "Decentralized Governance",
-      description: "Community-driven governance system for decentralized applications built on the Sui blockchain.",
+      title: "Social Media Dashboard",
+      description: "An analytics dashboard for social media managers to track engagement metrics and schedule content.",
       image: "/project3.png",
-      tags: ["Governance", "DAO", "Blockchain", "Voting"],
+      tags: ["React", "Chart.js", "Firebase", "Material UI"],
       link: "#",
-      github: "https://github.com/wheat-eco",
+      github: "https://github.com/Muiz-Dev/social-dashboard",
     },
     {
-      title: "Yield Farming Platform",
-      description: "Innovative yield farming and liquidity provision mechanisms for the DeFi ecosystem.",
+      title: "Task Management App",
+      description:
+        "A collaborative task management application with real-time updates, notifications, and team features.",
       image: "/project4.png",
-      tags: ["Yield Farming", "DeFi", "Liquidity", "Staking"],
+      tags: ["Vue.js", "Express", "Socket.io", "MongoDB"],
       link: "#",
-      github: "https://github.com/wheat-eco/DeFI-2.0",
+      github: "https://github.com/Muiz-Dev/task-manager",
     },
   ]
 
@@ -75,8 +76,8 @@ export default function Projects() {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
         <div className="w-20 h-1 bg-blue-500 mx-auto mb-8"></div>
         <p className="max-w-3xl mx-auto text-lg text-gray-600">
-          Explore my latest work in blockchain development, DeFi solutions, and Web3 applications. Each project
-          represents my commitment to innovation and technical excellence.
+          Explore my latest work in web development and software engineering. Each project represents my commitment to
+          creating efficient, user-friendly, and scalable applications.
         </p>
       </motion.div>
 
@@ -161,4 +162,3 @@ export default function Projects() {
     </div>
   )
 }
-

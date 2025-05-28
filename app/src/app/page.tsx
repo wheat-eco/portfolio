@@ -6,7 +6,6 @@ import { ArrowDown, GitlabIcon as GitHub, Linkedin, Mail } from "lucide-react"
 import Hero from "@/components/hero"
 import About from "@/components/about"
 import Skills from "@/components/skills"
-import Projects from "@/components/projects"
 import Experience from "@/components/experience"
 import Contact from "@/components/contact"
 import MobileNav from "@/components/mobile-nav"
@@ -19,7 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "skills", "projects", "experience", "contact"]
+      const sections = ["home", "about", "skills", "experience", "contact"]
       const scrollPosition = window.scrollY + 100
 
       sections.forEach((section) => {
@@ -72,7 +71,7 @@ export default function Home() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {["home", "about", "skills", "projects", "experience", "contact"].map((item) => (
+            {["home", "about", "skills", "experience", "contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
@@ -130,11 +129,7 @@ export default function Home() {
           <Skills />
         </section>
 
-        <section id="projects" className="py-20 bg-gray-50">
-          <Projects />
-        </section>
-
-        <section id="experience" className="py-20">
+        <section id="experience" className="py-20 bg-gray-50">
           <Experience />
         </section>
 
@@ -148,7 +143,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-6 md:mb-0">
                 <h2 className="text-2xl font-bold">Muiz Adesope Ayomide</h2>
-                <p className="mt-2 text-blue-100">Full-Stack Developer | Blockchain Innovator</p>
+                <p className="mt-2 text-blue-100">Full-Stack Developer | Software Engineer</p>
               </div>
               <div className="flex space-x-4">
                 <Button
@@ -177,7 +172,7 @@ export default function Home() {
                   className="rounded-full bg-white/10 hover:bg-white/20 text-white"
                   asChild
                 >
-                  <a href="mailto:muiz@wheatchain.xyz">
+                  <a href="mailto:muiz.dev.io@gmail.com">
                     <Mail className="h-5 w-5" />
                   </a>
                 </Button>
@@ -205,4 +200,3 @@ export default function Home() {
     </main>
   )
 }
-
