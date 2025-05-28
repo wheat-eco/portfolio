@@ -1,48 +1,28 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import React, { useState } from "react"
 import { motion } from "framer-motion"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { Mail, MapPin, Phone, Send } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { Github, Linkedin } from "lucide-react"
+import { Github, Linkedin } from 'lucide-react'
+import { sendContactEmail } from "@/actions/send-email"
+import { useActionState } from "react"
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(false)
+  const [state, formAction, isPending] = useActionState(sendContactEmail, null)
+  const [showSuccess, setShowSuccess] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-
-    // Create mailto link with form data
-    const subject = encodeURIComponent(formData.subject)
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)
-
-    // Open mailto link
-    window.location.href = `mailto:muiz@wheatchain.xyz?subject=${subject}&body=${body}`
-
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" })
-    setSubmitSuccess(true)
-
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitSuccess(false), 5000)
-  }
+  // Show success message when email is sent successfully
+  React.useEffect(() => {
+    if (state?.success) {
+      setShowSuccess(true)
+      const timer = setTimeout(() => setShowSuccess(false), 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [state])
 
   return (
     <div className="container mx-auto px-4">
@@ -72,7 +52,7 @@ export default function Contact() {
           <Card className="border-none shadow-lg">
             <CardContent className="p-6">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h3>
-              <form onSubmit={handleSubmit}>
+              <form action={formAction}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -81,11 +61,10 @@ export default function Contact() {
                     <Input
                       id="name"
                       name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="John Doe"
+                      placeholder="John Dave"
                       required
                       className="w-full"
+                      disabled={isPending}
                     />
                   </div>
                   <div>
@@ -96,11 +75,10 @@ export default function Contact() {
                       id="email"
                       name="email"
                       type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder="Dave@example.com"
                       required
                       className="w-full"
+                      disabled={isPending}
                     />
                   </div>
                 </div>
@@ -111,11 +89,10 @@ export default function Contact() {
                   <Input
                     id="subject"
                     name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
                     placeholder="Project Inquiry"
                     required
                     className="w-full"
+                    disabled={isPending}
                   />
                 </div>
                 <div className="mb-6">
@@ -125,24 +102,48 @@ export default function Contact() {
                   <Textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     placeholder="Your message here..."
                     required
                     className="w-full min-h-[150px]"
+                    disabled={isPending}
                   />
                 </div>
                 <Button
                   type="submit"
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md flex items-center gap-2"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md flex items-center gap-2 disabled:opacity-50"
+                  disabled={isPending}
                 >
                   <Send className="h-4 w-4" />
-                  Send Message
+                  {isPending ? 'Sending...' : 'Send Message'}
                 </Button>
-                {submitSuccess && (
-                  <div className="mt-4 p-3 bg-green-100 text-green-700 rounded-md">
-                    Your message has been sent successfully! I'll get back to you soon.
-                  </div>
+                
+                {/* Success Message */}
+                {showSuccess && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 p-4 bg-green-50 border border-green-200 text-green-700 rounded-md"
+                  >
+                    <div className="flex items-center">
+                      <Mail className="h-5 w-5 mr-2" />
+                      <div>
+                        <p className="font-medium">Message sent successfully!</p>
+                        <p className="text-sm">I'll get back to you within 24-48 hours. A confirmation email has been sent to your inbox.</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Error Message */}
+                {state?.error && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 p-4 bg-red-50 border border-red-200 text-red-700 rounded-md"
+                  >
+                    <p className="font-medium">Failed to send message</p>
+                    <p className="text-sm">{state.error}. Please try again or contact me directly.</p>
+                  </motion.div>
                 )}
               </form>
             </CardContent>
@@ -165,8 +166,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Email</h4>
-                    <a href="mailto:muiz@wheatchain.xyz" className="text-blue-600 hover:underline">
-                      muiz@wheatchain.xyz
+                    <a href="mailto:muiz.dev.io@gmail.com" className="text-blue-600 hover:underline">
+                      muiz.dev.io@gmail.com
                     </a>
                   </div>
                 </div>
@@ -189,7 +190,6 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <h4 className="font-semibold text-gray-900 mb-4">Connect with me</h4>
                 <div className="flex space-x-3">
@@ -222,4 +222,3 @@ export default function Contact() {
     </div>
   )
 }
-
